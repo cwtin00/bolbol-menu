@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bol Bol Fast Food Menü</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+
+<style>
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #111;
+    color: white;
+}
+
+/* CATEGORY TITLES */
+.section-title {
+    background: #ffea00;
+    color: #222;
+    padding: 8px 15px;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 25px;
+}
+
+/* ITEMS */
+.items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+    padding: 15px;
+}
+
+.item-card {
+    background: #1a1a1a;
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid #ffea00;
+
+    /* ⭐ EKLENEN GÖLGE */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.45);
+    transition: 0.2s;
+}
+
+/* ⭐ Hover efekti */
+.item-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.60);
+}
+
+.item-img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 8px;
+}
+
+.item-name {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.item-price {
+    font-size: 18px;
+    font-weight: 800;
+    margin-top: 6px;
+    color: #ff3b3b;
+}
+
+.item-card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s ease;
+}
+
+.item-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 0 12px #ffea00c7;
+}
+
+/* Shine efekti */
+.item-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+    transform: skewX(-25deg);
+}
+
+.item-card:hover::after {
+    animation: shine 0.85s ease-out;
+}
+
+@keyframes shine {
+    0% { left: -120%; }
+    100% { left: 140%; }
+}
+
+.header {
+  margin-bottom: -25px;
+}
+
+.section-title {
+    background: #ffea00;
+    color: #111;
+    padding: 10px 15px;
+    font-size: 24px;
+    font-weight: 800;
+    margin-top: 25px;
+    letter-spacing: 1px;
+    font-family: 'Bebas Neue', sans-serif;
+    text-transform: uppercase;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- 🔥 HEADER -->
+<div class="header" style="
+    position: relative;
+    height: 260px;
+    overflow: hidden;
+">
+
+    <img src='image/ates.png'
+         style='position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1; filter:brightness(0.7);'>
+
+    <div style="position:absolute; inset:0; background:rgba(0,0,0,0.45); z-index:2;"></div>
+
+    <img src="image/doner.png"
+         style="position:absolute; top:45px; left:15px; width:120px; z-index:3; transform:scaleX(-1);">
+
+    <img src="image/doner.png"
+         style="position:absolute; top:45px; right:15px; width:120px; z-index:3;">
+
+    <div style="position:relative; z-index:4; text-align:center; margin-top:35px;">
+        <div style='font-size:46px; font-weight:900; color:#ffea00; letter-spacing:2px; text-transform:uppercase;'>
+            BOL BOL
+        </div>
+        <div style='font-size:22px; font-weight:700; margin-top:-8px;'>
+            malzeme • lezzet
+        </div>
+
+        <!-- ⭐ MENÜ BAŞLIĞI -->
+        <div style="
+            font-size:32px;
+            font-weight:800;
+            margin-top:15px;
+            color:white;
+            letter-spacing:1px;
+            text-transform:uppercase;
+            text-shadow:0 0 10px rgba(255,255,255,0.35);
+        ">
+            MENÜ
+        </div>
+
+    </div>
+</div>
+
+<!-- ⭐ MENÜ -->
+
+<div class="section-title">TAVUK DÖNERLER</div>
+<div class="items">
+    <div class="item-card"><img src="image/yarim-ekmek.jpg" class="item-img"><div class="item-name">Yarım Ekmek Döner</div><div class="item-price">100₺</div></div>
+    <div class="item-card"><img src="image/durum-doner.jpg" class="item-img"><div class="item-name">Dürüm Döner</div><div class="item-price">125₺</div></div>
+    <div class="item-card"><img src="image/gozleme.webp" class="item-img"><div class="item-name">Gözleme Arası Döner</div><div class="item-price">125₺</div></div>
+    <div class="item-card"><img src="image/zurna.jpg" class="item-img"><div class="item-name">70 CM Zurna Döner</div><div class="item-price">150₺</div></div>
+    <div class="item-card"><img src="image/antakya.jpeg" class="item-img"><div class="item-name">Antakya Döner</div><div class="item-price">130₺</div></div>
+</div>
+
+<div class="section-title">TOSTLAR</div>
+<div class="items">
+    <div class="item-card"><img src="image/tost.jpg" class="item-img"><div class="item-name">Tost</div><div class="item-price">90₺</div></div>
+    <div class="item-card"><img src="image/karisik-tost.jpg" class="item-img"><div class="item-name">Full Karışık Tost</div><div class="item-price">150₺</div></div>
+    <div class="item-card"><img src="image/danasucuktost.png" class="item-img"><div class="item-name">Dana Sucuklu Tost</div><div class="item-price">150₺</div></div>
+</div>
+
+<div class="section-title">BURGER</div>
+<div class="items">
+    <div class="item-card"><img src="image/hamburger.webp" class="item-img"><div class="item-name">Hamburger</div><div class="item-price">150₺</div></div>
+</div>
+
+<div class="section-title">DİĞERLERİ</div>
+<div class="items">
+    <div class="item-card"><img src="image/kumru.jpg" class="item-img"><div class="item-name">Kumru</div><div class="item-price">150₺</div></div>
+    <div class="item-card"><img src="image/spatso.jpg" class="item-img"><div class="item-name">Sucuklu Patso</div><div class="item-price">120₺</div></div>
+    <div class="item-card"><img src="image/kofte-ekmek.webp" class="item-img"><div class="item-name">Ev Yapımı Köfte</div><div class="item-price">150₺</div></div>
+</div>
+
+</body>
+</html>
